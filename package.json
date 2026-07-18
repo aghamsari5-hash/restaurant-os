@@ -1,0 +1,13 @@
+{
+  "name": "restaurant-os-root",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "format": "pnpm -r run format"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
