@@ -1,0 +1,347 @@
+# Sprint 002 — Identity Foundation
+
+## Goal
+
+Build the Identity domain foundation for RestaurantOS.
+
+This sprint establishes the core identity models and infrastructure that all future authentication and authorization features depend on.
+
+No authentication workflow should be implemented.
+
+---
+
+# Required Documentation
+
+Before implementation read:
+
+docs/002-system-architecture.md
+
+docs/004-authentication.md
+
+docs/031-architecture-overview.md
+
+docs/032-domain-model.md
+
+docs/034-database-design.md
+
+docs/035-api-standards.md
+
+docs/036-backend-coding-standards.md
+
+docs/040-claude-code-development-guide.md
+
+CLAUDE.md
+
+PROJECT_RULES.md
+
+Documentation is the source of truth.
+
+---
+
+# Scope
+
+Implement only:
+
+## Domain
+
+User
+
+Role
+
+Permission
+
+UserRole
+
+RolePermission
+
+---
+
+## Value Objects
+
+Email
+
+PasswordHash
+
+UserStatus
+
+---
+
+## Repository Interfaces
+
+IUserRepository
+
+IRoleRepository
+
+IPermissionRepository
+
+---
+
+## Prisma
+
+Create Prisma models for:
+
+User
+
+Role
+
+Permission
+
+UserRole
+
+RolePermission
+
+Requirements:
+
+UUID primary keys
+
+created_at
+
+updated_at
+
+deleted_at
+
+tenant_id
+
+Indexes
+
+Unique constraints
+
+Foreign keys
+
+No business tables outside Identity.
+
+---
+
+## Backend Modules
+
+Create module skeletons:
+
+AuthModule
+
+UsersModule
+
+RolesModule
+
+PermissionsModule
+
+Only dependency wiring.
+
+No business logic.
+
+---
+
+## DTO
+
+Create DTOs:
+
+CreateUserDto
+
+UpdateUserDto
+
+CreateRoleDto
+
+UpdateRoleDto
+
+CreatePermissionDto
+
+UpdatePermissionDto
+
+Validation required.
+
+---
+
+## Validation
+
+Use:
+
+class-validator
+
+class-transformer
+
+Strict validation.
+
+---
+
+## Swagger
+
+Register all Identity DTOs.
+
+Register all modules.
+
+No endpoints beyond basic module registration.
+
+---
+
+# Out Of Scope
+
+Do NOT implement:
+
+Login
+
+Logout
+
+JWT
+
+Refresh Token
+
+Passport
+
+Guards
+
+RBAC logic
+
+Authorization
+
+Sessions
+
+Cookies
+
+Password Reset
+
+Email Verification
+
+MFA
+
+Audit Logs
+
+User Profile
+
+Avatar Upload
+
+Notifications
+
+Anything outside Identity Foundation.
+
+---
+
+# Coding Standards
+
+Production Ready.
+
+Strict TypeScript.
+
+DDD.
+
+Clean Architecture.
+
+Repository Pattern.
+
+SOLID.
+
+No TODO.
+
+No FIXME.
+
+No Placeholder.
+
+No Mock Business Logic.
+
+---
+
+# Deliverables
+
+Prisma schema updated.
+
+Migration generated.
+
+Repository interfaces created.
+
+Entities created.
+
+Value Objects created.
+
+DTOs created.
+
+Validation added.
+
+Modules registered.
+
+Swagger updated.
+
+Project builds successfully.
+
+---
+
+# Verification
+
+Verify:
+
+Backend build
+
+Prisma generate
+
+Prisma migrate
+
+Swagger
+
+Docker
+
+TypeScript
+
+ESLint
+
+Unit tests (where applicable)
+
+No compilation errors.
+
+---
+
+# Acceptance Criteria
+
+Sprint is complete only if:
+
+Identity models exist.
+
+Migration succeeds.
+
+Swagger loads successfully.
+
+Backend builds.
+
+Docker remains functional.
+
+No business authentication implemented.
+
+No authorization implemented.
+
+No unfinished code exists.
+
+---
+
+# Pull Request
+
+Create one Pull Request.
+
+Title:
+
+feat(identity): implement identity foundation
+
+Include:
+
+Created files
+
+Modified files
+
+Migration summary
+
+Prisma schema summary
+
+Verification results
+
+Known limitations
+
+---
+
+# Stop Condition
+
+After Sprint 002 is complete:
+
+STOP.
+
+Do not begin Authentication.
+
+Do not begin JWT.
+
+Do not begin RBAC.
+
+Wait for the next Sprint.
